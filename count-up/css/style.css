@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+body {
+  /* Dark space/cockpit background */
+  background: #02031a;
+  /* Set the sci-fi font for the whole page */
+  font-family: 'Orbitron', sans-serif;
+  /* Bright cyan "HUD" text color */
+  color: #00e5ff;
+}
+
+/* ゲーム画面全体 */
+#wrapper {
+  width: 500px;
+  margin: auto;
+}
+/* ゲーム画面上部 */
+header {
+  position: relative;
+  margin-bottom: 10px;
+  /* Color is inherited from body */
+  font-weight: bold;
+}
+/* 見出し */
+h1 {
+  padding: 40px 0 60px;
+  text-align: center;
+  font-size: 3em;
+  /* Add a "glow" to the title */
+  text-shadow: 0 0 10px #00e5ff, 0 0 5px #fff;
+}
+/* 共通 */
+#record, #timer {
+  position: absolute;
+  font-size: 1.3em;
+  bottom: 0;
+}
+
+/* 最短クリア時間 */
+#record {
+  left: 0;
+}
+
+/* 経過時間 */
+#timer {
+  right: 0;
+  text-align: center;
+}
+
+/* ゲーム画面 */
+#game {
+  position: relative;
+}
+/* カード部分 */
+#numbers div {
+  width: 100px;
+  height: 99px;
+  padding-top: 35px;
+  font-size: 1.8em;
+  font-weight: bold;
+  box-sizing: border-box;
+  
+  /* Semi-transparent background */
+  background: rgba(0, 229, 255, 0.1);
+  /* Bright cyan "HUD" grid border */
+  border: 1px solid #00e5ff;
+  color: #00e5ff;
+
+  /* Use 0 margin so the 1px border creates the grid */
+  margin-right: 0;
+  margin-bottom: 0;
+  
+  float: left;
+  text-align: center;
+  cursor: pointer;
+
+  /* Added for smooth animation on click */
+  transition: all 0.2s ease-in-out;
+}
+/* 正解時にカード色を反転 */
+#numbers div.hit {
+  /* This is the "LOCKED IN" style */
+  background: #00ff7f; /* Bright "success" green */
+  color: #02031a; /* Dark text for contrast */
+  text-shadow: none; /* Turn off glow */
+  border-color: #00ff7f;
+}
+/* スタート画面 */
+#startScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  /* Semi-transparent dark overlay */
+  background: rgba(2, 3, 26, 0.95);
+}
+/* クリア時間 */
+#startScene p {
+  margin: 205px 0 10px;
+  text-align: center;
+  color: #00e5ff; /* Bright cyan text */
+  font-size: 1.2em;
+}
+/* スタートボタン */
+#startScene button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 35px;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 40px;
+  cursor: pointer;
+  
+  /* Button style: bright background, dark text */
+  color: #02031a;
+  background: #00e5ff;
+  /* Make sure button uses the sci-fi font */
+  font-family: 'Orbitron', sans-serif;
+}
+/* スタートボタン:ホバー時 */
+#startScene button:hover {
+  background: #ffffff; /* Glow white on hover */
+  color: #02031a;
+}
+
+/* スタートボタン:クリック時 */
+#startScene button:focus {
+  outline: none;
+}
